@@ -8,7 +8,10 @@ import streamlit as st
 import json
 
 # OpenAIの埋め込みを使用
-Settings.embed_model = "text-embedding-ada-002"
+from llama_index.embeddings.openai import OpenAIEmbedding
+
+Settings.embed_model = OpenAIEmbedding(model="text-embedding-ada-002")
+
 
 # 保存用のJSONファイル
 data_file = "saved_links.json"
@@ -51,7 +54,7 @@ def ask_chatbot_with_web(question, index):
     context = query_engine.query(question)
     
     response = OpenAI.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o mini",
         messages=[
             {"role": "system", "content": f"Use this context: {context}"},
             {"role": "user", "content": question}
