@@ -52,9 +52,20 @@ def index_web_contents(urls, save_dir="web_articles"):
 
 # ChatGPTとの連携
 def ask_chatbot_with_web(question, index):
+    from llama_index.core.retrievers import VectorIndexRetriever
     from llama_index.core.query_engine import RetrieverQueryEngine
-    query_engine = RetrieverQueryEngine(index)
+
+    # Retriever を作成（類似度が高い上位3件を取得）
+    retriever = VectorIndexRetriever(index=index, similarity_top_k=3)
+
+    # Query Engine を作成
+    query_engine = RetrieverQueryEngine(retriever=retriever)
+
+    # 検索実行
     context = query_engine.query(question)
+
+    return str(context)  # 検索結果を文字列として返す
+
     
     response = OpenAI.ChatCompletion.create(
         model="gpt-4o mini",
