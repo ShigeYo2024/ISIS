@@ -1,7 +1,0 @@
-requests
-beautifulsoup4
-llama-index
-streamlit
-openai
-tiktoken
-pandas
