@@ -45,7 +45,7 @@ def ask_chatbot_with_web(question, index):
     context = query_engine.query(question)
     
     response = OpenAI.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-4o mini",
         messages=[
             {"role": "system", "content": f"Use this context: {context}"},
             {"role": "user", "content": question}
