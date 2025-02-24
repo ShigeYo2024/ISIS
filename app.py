@@ -1,3 +1,4 @@
+import openai
 import requests
 from bs4 import BeautifulSoup
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
@@ -12,7 +13,6 @@ openai.api_key = st.secrets["OpenAIAPI"]["openai_api_key"]
 
 # OpenAIの埋め込みを使用
 from llama_index.embeddings.openai import OpenAIEmbedding
-
 Settings.embed_model = OpenAIEmbedding(model="text-embedding-ada-002")
 
 
