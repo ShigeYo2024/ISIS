@@ -1,6 +1,6 @@
 requests
 beautifulsoup4
-llama-index
+llama-index>=0.8.0
 streamlit
 openai
 tiktoken
