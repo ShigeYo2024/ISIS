@@ -46,8 +46,7 @@ def index_web_contents(urls, save_dir="web_articles"):
 # ChatGPTとの連携
 def ask_chatbot_with_web(question, index):
     from openai import OpenAI
-    from llama_index.query_engine import RetrieverQueryEngine
-    
+    from llama_index.core.query_engine import RetrieverQueryEngine
     query_engine = RetrieverQueryEngine(index)
     context = query_engine.query(question)
     
