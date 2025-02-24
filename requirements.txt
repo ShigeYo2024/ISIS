@@ -6,3 +6,4 @@ streamlit
 openai
 tiktoken
 pandas
+llama-index-embeddings-huggingface
