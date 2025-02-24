@@ -7,6 +7,9 @@ import os
 import streamlit as st
 import json
 
+# StreamlitのSecretsからOpenAI API keyを取得
+openai.api_key = st.secrets["OpenAIAPI"]["openai_api_key"]
+
 # OpenAIの埋め込みを使用
 from llama_index.embeddings.openai import OpenAIEmbedding
 
