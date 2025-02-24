@@ -6,3 +6,4 @@ openai
 tiktoken
 pandas
 json
+llama-index-embeddings-openai
