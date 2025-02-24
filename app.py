@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 from llama_index.core import SimpleDirectoryReader
-from llama_index import VectorStoreIndex
+from llama_index.core import VectorStoreIndex
+
 import os
 import streamlit as st
 
