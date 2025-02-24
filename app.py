@@ -2,6 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core import VectorStoreIndex
+from llama_index.core import Settings
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+# OpenAIを使わずにHuggingFaceの埋め込みを使用
+Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 import os
 import streamlit as st
